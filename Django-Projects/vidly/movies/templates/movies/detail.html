@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+<dl>
+  <dt>title</dt>
+  <dd>
+    <a href='{% url "movies_detail" movie.id %}'>
+    {{ movie.title }}</dd>
+    </a>
+  <dt>Genre</dt>
+  <dd>{{ movie.Genre }}</dd>
+  <dt>stock</dt>
+  <dd>{{ movie.daily_rate }}</dd>
+</dl>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+<!-- {% comment %} render the list of movies  {% endcomment %}
+{% comment %} zen coding {% endcomment %}
+{% comment %} we need a table, with the class table(what is the diffrence here between these 2) {% endcomment %}
+{% comment %} inside this table we wanna have a thead section {% endcomment %}
+{% comment %} inside the thead we want a tr, inside the tr we want 3 th tags table.table>tead>tr*3{% endcomment %} -->
+{% block content %}
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Genre</th>
+      <th>title</th>
+      <th>year</th>
+      <th>daily rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- we wanna render this tr dynamically we wanna iterate over all the movies in this table and for each one we wanna render a table row,that's where we use django templates syntax -->
+    <!--this is what we call a template tag-->
+    {% for i in movies %}
+    <tr>
+      <td>{{i.Genre}}</td>
+      <td>{{i.title}}</td>
+      <td>{{i.year}}</td>
+      <td>{{i.daily_rate}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
